@@ -8,7 +8,7 @@ using System.Text;
  * Date: July 25, 2017
  * Desc: This is the deck class which inherits from the list generic collection
  * This class creates a new List type - Card
- * Ver: 0.1 - Created the Deck class 
+ * Ver: 0.2 - Fixed bug in the _initialize method
  */
 
 namespace COMP123_S2017_Lesson11
@@ -36,7 +36,7 @@ namespace COMP123_S2017_Lesson11
         {
             for (int suit = 0; suit <= (int)Suit.Spades; suit++)
             {
-                for (int face = 0; face <= (int)Face.King; face++)
+                for (int face = 1; face <= (int)Face.King; face++)
                 {
                     this.Add(new Card((Face)face, (Suit)suit));
                 }
