@@ -8,7 +8,7 @@ using System.Text;
  * Date: July 25, 2017
  * Desc: This is the deck class which inherits from the list generic collection
  * This class creates a new List type - Card
- * Ver: 0.2 - Fixed bug in the _initialize method
+ * Ver: 0.3 - Added public shuffle method 
  */
 
 namespace COMP123_S2017_Lesson11
@@ -16,6 +16,16 @@ namespace COMP123_S2017_Lesson11
     public class Deck:List<Card>
     {
         // PRIVATE INSTANCE VARIABLES 
+        private Random _random;
+
+        // PRIVATE PROPERTY
+        private Random Random
+        {
+            get
+            {
+                return this._random;
+            }
+        }
 
         // PUBLIC PROPERTIES 
 
@@ -31,9 +41,14 @@ namespace COMP123_S2017_Lesson11
         // PRIVATE METHODS 
         /// <summary>
         /// This is the private _initialize method that loads the deck with 52 cards 
+        /// This method also initializes other class variables
         /// </summary>
         private void _initialize()
         {
+            // initialize the random object 
+            this._random = new Random();
+
+            // load the list with cards 
             for (int suit = 0; suit <= (int)Suit.Spades; suit++)
             {
                 for (int face = 1; face <= (int)Face.King; face++)
@@ -59,6 +74,30 @@ namespace COMP123_S2017_Lesson11
             }
 
             return outputString;
+        }
+
+        /// <summary>
+        /// This method shuffles the deck 
+        /// </summary>
+        public void Shuffle()
+        {
+            int firstCard, secondCard;
+            Card tempCard;
+
+
+            for (int i = 0; i < this.Count; i++)
+            {
+                firstCard = this.Random.Next(0, 52);
+                secondCard = this.Random.Next(0, 52);
+
+                tempCard = (Card)this[secondCard].Clone();
+                this[secondCard].Face = this[firstCard].Face;
+                this[secondCard].Suit = this[firstCard].Suit;
+
+                this[firstCard].Suit = tempCard.Suit;
+                this[firstCard].Face = tempCard.Face;
+            }
+
         }
     }
 }

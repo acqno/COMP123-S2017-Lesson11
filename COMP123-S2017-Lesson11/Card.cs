@@ -7,12 +7,12 @@ using System.Text;
  * Name: Alvin Quijano
  * Date: July 25, 2017
  * Desc: This is the Card class to be used in the card shuffling and dealing simulation
- * Ver: 0.1 - Created the Card class
+ * Ver: 0.2 - Added the cloneable interface
  */
 
 namespace COMP123_S2017_Lesson11
 {
-    public class Card
+    public class Card : ICloneable
     {
         // PRIVATE INSTANCE VARIABLES
         private Face _face;
@@ -56,8 +56,18 @@ namespace COMP123_S2017_Lesson11
             this.Suit = suit;
         }
 
+
+
         // PRIVATE METHODS 
 
         // PUBLIC METHODS 
+        /// <summary>
+        /// Returns a copy of the current card 
+        /// </summary>
+        /// <returns></returns>
+        public object Clone()
+        {
+            return new Card(this.Face, this.Suit);
+        }
     }
 }
