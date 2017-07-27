@@ -8,7 +8,7 @@ using System.Text;
  * Date: July 25, 2017
  * Desc: This is the deck class which inherits from the list generic collection
  * This class creates a new List type - Card
- * Ver: 0.4 - Refactored deck class to inherit from CardList super class 
+ * Ver: 0.5 - Added deal1 method 
  */
 
 namespace COMP123_S2017_Lesson11
@@ -100,6 +100,13 @@ namespace COMP123_S2017_Lesson11
                 this[firstCard].Face = tempCard.Face;
             }
 
+        }
+
+        public Card Deal1()
+        {
+            Card firstCard = (Card)this[0].Clone();
+            this.RemoveAt(0); // Removes the top card 
+            return firstCard;
         }
     }
 }
