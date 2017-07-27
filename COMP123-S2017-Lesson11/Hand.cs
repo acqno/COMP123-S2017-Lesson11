@@ -8,7 +8,7 @@ using System.Text;
  * Date: July 27, 2017
  * Desc: This is the Hand class 
  * It inherits from the CardList super class
- * Ver: 0.1 - Created the Hand class
+ * Ver: 0.2 - Added the Deal1 method 
  */
 
 namespace COMP123_S2017_Lesson11
@@ -45,6 +45,13 @@ namespace COMP123_S2017_Lesson11
             }
 
             return outputString;
+        }
+        
+        public Card Deal1()
+        {
+            Card firstCard = (Card)this[0].Clone();
+            this.RemoveAt(0); // Removes the top card 
+            return firstCard;
         }
     }
 }
