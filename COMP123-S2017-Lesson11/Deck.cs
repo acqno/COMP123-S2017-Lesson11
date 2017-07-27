@@ -67,6 +67,8 @@ namespace COMP123_S2017_Lesson11
         public override string ToString()
         {
             string outputString = "";
+            outputString += "The Deck contains:\n";
+            outputString += "===================================================\n";
 
             foreach (Card card in this)
             {
