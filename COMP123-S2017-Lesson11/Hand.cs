@@ -8,7 +8,7 @@ using System.Text;
  * Date: July 27, 2017
  * Desc: This is the Hand class 
  * It inherits from the CardList super class
- * Ver: 0.3 - Fixed a bug - non implemented _initialize method
+ * Ver: 0.4 - Created and implemented the HighestCards method that orders the cards in Hand by greatest value
  */
 
 namespace COMP123_S2017_Lesson11
