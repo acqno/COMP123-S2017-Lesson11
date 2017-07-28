@@ -18,7 +18,7 @@ namespace COMP123_S2017_Lesson11
         Two,
         Three,
         Four,
-        FIve,
+        Five,
         Six,
         Seven,
         Eight,

@@ -48,6 +48,21 @@ namespace COMP123_S2017_Lesson11
 
             return outputString;
         }
+
+        public void HighestCards()
+        {
+            var highestCard =
+                from card in this
+                orderby card.Face descending
+                select card;
+
+            Console.WriteLine("The highest cards values to lowest card values:");
+            Console.WriteLine("===================================================");
+            foreach (var card in highestCard)
+            {
+                Console.WriteLine("The " + card.Face + " of " + card.Suit);
+            }
+        }
         
         
     }

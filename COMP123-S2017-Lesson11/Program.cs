@@ -26,8 +26,16 @@ namespace COMP123_S2017_Lesson11
             deck.Shuffle();
             Console.WriteLine(deck.ToString());
 
-            hand.Add(deck.Deal1()); // deak ibe card from the top of the deck 
+            /*
+            hand.Add(deck.Deal1()); // deak one card from the top of the deck 
             Console.WriteLine(hand.ToString());
+            */
+
+            hand = deck.Deal5();
+            Console.WriteLine(hand.ToString());
+
+            hand.HighestCards();
+
         }
     }
 }

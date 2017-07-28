@@ -8,7 +8,7 @@ using System.Text;
  * Date: July 25, 2017
  * Desc: This is the deck class which inherits from the list generic collection
  * This class creates a new List type - Card
- * Ver: 0.5 - Added deal1 method 
+ * Ver: 0.6 - Added the deal5 method that creates a new Hand object and deals 5 cards. 
  */
 
 namespace COMP123_S2017_Lesson11
@@ -30,13 +30,6 @@ namespace COMP123_S2017_Lesson11
         // PUBLIC PROPERTIES 
 
         // CONSTRUCTOR
-        /// <summary>
-        /// This is the main constructor for the deck class
-        /// </summary>
-        public Deck()
-        {
-            this._initialize();
-        }
 
         // PRIVATE METHODS 
         /// <summary>
@@ -57,7 +50,7 @@ namespace COMP123_S2017_Lesson11
                 }
             }
 
-            
+
         }
 
         // PUBLIC METHODS 
@@ -95,18 +88,31 @@ namespace COMP123_S2017_Lesson11
                 tempCard = (Card)this[secondCard].Clone();
                 this[secondCard].Face = this[firstCard].Face;
                 this[secondCard].Suit = this[firstCard].Suit;
-
-                this[firstCard].Suit = tempCard.Suit;
                 this[firstCard].Face = tempCard.Face;
+                this[firstCard].Suit = tempCard.Suit;
+                
             }
 
         }
-
+        /*
         public Card Deal1()
         {
             Card firstCard = (Card)this[0].Clone();
             this.RemoveAt(0); // Removes the top card 
             return firstCard;
+        }*/
+
+        public Hand Deal5()
+        {
+            Hand fiveCards = new Hand();
+
+            for (int i = 0; i < 5; i++)
+            {
+                fiveCards.Add(this[i]);
+            }
+
+            return fiveCards;
         }
+
     }
 }
