@@ -8,7 +8,7 @@ using System.Threading.Tasks;
  * Name: Alvin Quijano
  * Date: July 25, 2017
  * Desc: Demo for lesson 11
- * Ver: 0.3 - Tested the deal1 method 
+ * Ver: 0.4 - Tested the deal5 method and HighestCards method
  */
 
 
@@ -26,15 +26,10 @@ namespace COMP123_S2017_Lesson11
             deck.Shuffle();
             Console.WriteLine(deck.ToString());
 
-            /*
-            hand.Add(deck.Deal1()); // deak one card from the top of the deck 
-            Console.WriteLine(hand.ToString());
-            */
+            hand = deck.Deal5(); // Deals 5 cards to the hand container 
+            Console.WriteLine(hand.ToString()); // outputs the cards in Hand 
 
-            hand = deck.Deal5();
-            Console.WriteLine(hand.ToString());
-
-            hand.HighestCards();
+            hand.HighestCards(); // Sorts the cards in Hand by highest value 
 
         }
     }

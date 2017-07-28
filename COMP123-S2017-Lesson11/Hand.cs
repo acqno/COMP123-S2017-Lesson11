@@ -56,7 +56,7 @@ namespace COMP123_S2017_Lesson11
                 orderby card.Face descending
                 select card;
 
-            Console.WriteLine("The highest cards values to lowest card values:");
+            Console.WriteLine("The highest card values in current Hand by descending order:");
             Console.WriteLine("===================================================");
             foreach (var card in highestCard)
             {
